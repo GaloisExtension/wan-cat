@@ -13,7 +13,7 @@ st.title("お名前判定")
 st.write("僕の家で飼っているペットの名前がわかる！")
 
 # 学習データのディレクトリからクラス名を取得
-class_names = ['mint','mitsumame','tora','rui']
+class_names = ['mint','mitsumame','rui','tora']
 
 # クラス名と表示名のマッピング辞書
 class_display_names = {
@@ -59,4 +59,4 @@ if uploaded_file is not None:
 
     # 結果を表示
     st.success(f"予測結果: {result_name}")
-    st.write(f"(クラス: {class_name}, スコア: {predictions[0][predicted_class]:.4f})")
+    st.write(f"(クラス: {class_name}, スコア: {predictions[0][predicted_class] * 100:.2f}%)")
